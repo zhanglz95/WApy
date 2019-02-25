@@ -1,6 +1,8 @@
 # WApy(Weiler-Atherton clipping algorithm in python)
 This rep is python implementation of Weiler-Atherton clipping algorithm.
+
 reference:[https://www.cnblogs.com/lsxqw2004/p/4843417.html](https://www.cnblogs.com/lsxqw2004/p/4843417.html)
+
 github:[https://github.com/lsxqw2004/blog_sample_codes](https://github.com/lsxqw2004/blog_sample_codes)
 
 ## How to use?
