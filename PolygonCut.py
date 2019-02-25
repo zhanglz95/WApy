@@ -2,6 +2,7 @@
 # ----------------------------------------------------------------------------------------------------------------
 # S = "161 137 429 376 558 192 619 418 281 431"
 # C = "183 391 224 240 610 107 657 361 429 376"
+
 # resut
 # ####################
 # 261.867222318,226.95248557436787
@@ -64,6 +65,10 @@
 # 文档示例1
 # S = "70 104 227 357 281 219 412 455 625 299 688 484 120 487"
 # C = "125 256 689 242 710 427 40 371"
+
+# reverse isClockwise = False
+# S = "70 104 120 487 688 484 625 299 412 455 281 219 227 357"
+# C = "125 256 40 371 710 427 689 242"
 
 # result
 # #######################################################################
@@ -407,6 +412,7 @@ def printList(start, isS):
                 next = next.next
             else:
                 assert isinstance(next, Intersection)
+                print(next.crossDi)
                 next = next.nextS
     else:
         print("list C:")
@@ -418,6 +424,7 @@ def printList(start, isS):
                 next = next.next
             else:
                 assert isinstance(next, Intersection)
+                print(next.crossDi)
                 next = next.nextC
     print("#######################################################################")
 
@@ -480,7 +487,7 @@ def encode(Str):
             myList.append(Vertex(X[i], Y[i]))
     return myList
 
-def PolyClipping(S, C):
+def PolyClipping(S, C, isClosewise):
     # 对输入字符串进行解码
     listS = encode(S)  # 存放S顶点
     listC = encode(C)  # 存放C顶点
@@ -527,13 +534,19 @@ def PolyClipping(S, C):
     if len(listI) == 0: # 没有交点
         return decode([processNoCross(listS, listC)])
 
+    # 逆时针转换进出性
+    if not isClosewise:
+        for inter in listI:
+            inter.crossDi = 0 if inter.crossDi == 1 else 1
+    # 输出测试
     # printList(listS[0], True)
     # printList(listC[0], False)
+
     # 按规则连接交点
     return  decode(Compose(listI))
 
 # USAGE
 
-# result = PolyClipping(S, C)
-# for r in result:
-#     print(r)
+result = PolyClipping(S, C, False)
+for r in result:
+    print(r)
