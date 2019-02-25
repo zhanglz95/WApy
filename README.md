@@ -44,8 +44,5 @@ The coordinate frame is:
 |    
 |    
 |    
-|    
-|    
-|    
 v    
 *y+*    
