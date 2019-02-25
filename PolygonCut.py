@@ -2,7 +2,6 @@
 # ----------------------------------------------------------------------------------------------------------------
 # S = "161 137 429 376 558 192 619 418 281 431"
 # C = "183 391 224 240 610 107 657 361 429 376"
-
 # resut
 # ####################
 # 261.867222318,226.95248557436787
@@ -450,6 +449,8 @@ def Compose(list):
     # 去掉重复点
     for vertexs in result:
         for i in range(len(vertexs)):
+            if i >= len(vertexs):
+                break
             u = vertexs[i % len(vertexs)]
             v = vertexs[(i + 1) % len(vertexs)]
             if(floatEqual(u.x, v.x) and floatEqual(u.y, v.y)):
