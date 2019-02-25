@@ -487,7 +487,7 @@ def encode(Str):
             myList.append(Vertex(X[i], Y[i]))
     return myList
 
-def PolyClipping(S, C, isClosewise):
+def PolyClipping(S, C, isClosewise = True):
     # 对输入字符串进行解码
     listS = encode(S)  # 存放S顶点
     listC = encode(C)  # 存放C顶点
@@ -547,6 +547,6 @@ def PolyClipping(S, C, isClosewise):
 
 # USAGE
 
-result = PolyClipping(S, C, False)
-for r in result:
-    print(r)
+# result = PolyClipping(S, C)
+# for r in result:
+#     print(r)
