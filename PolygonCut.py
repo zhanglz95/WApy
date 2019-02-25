@@ -478,7 +478,8 @@ def decode(lists):
 
 def encode(Str):
     myList = []
-    list_int = list(map(int, Str.strip().split()))
+    list_float = list(map(float, Str.strip().split()))
+    list_int = list(map(int, list_float))
     X = list_int[0::2]
     Y = list_int[1::2]
     assert len(X) == len(Y)

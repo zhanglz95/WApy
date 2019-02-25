@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PolygonCut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
+            <state relative-caret-position="146">
+              <caret line="483" column="22" lean-forward="true" selection-start-line="483" selection-start-column="22" selection-end-line="483" selection-end-column="22" />
               <folding>
                 <element signature="e#15480#16773#0" />
               </folding>
@@ -64,9 +64,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="216" />
-    <option name="y" value="72" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="345" />
+    <option name="y" value="206" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -141,23 +141,23 @@
       <workItem from="1551088404556" duration="32000" />
       <workItem from="1551089311883" duration="19000" />
       <workItem from="1551090833148" duration="599000" />
-      <workItem from="1551091482271" duration="1997000" />
+      <workItem from="1551091482271" duration="2865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63603000" />
+    <option name="totallyTimeSpent" value="64471000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="345" y="206" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36865672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.53233254" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3979885" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -182,8 +182,8 @@
     <entry file="file://$PROJECT_DIR$/DataStruct.py" />
     <entry file="file://$PROJECT_DIR$/PolygonCut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="162" column="26" lean-forward="true" selection-start-line="162" selection-start-column="26" selection-end-line="162" selection-end-column="26" />
+        <state relative-caret-position="146">
+          <caret line="483" column="22" lean-forward="true" selection-start-line="483" selection-start-column="22" selection-end-line="483" selection-end-column="22" />
           <folding>
             <element signature="e#15480#16773#0" />
           </folding>
