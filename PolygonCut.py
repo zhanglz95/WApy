@@ -144,8 +144,6 @@
 # 386,103
 # ####################
 # ----------------------------------------------------------------------------------------------------------------
-
-
 # Datastruct
 class baseVertex:
     def __init__(self, x, y):
@@ -248,8 +246,6 @@ def CutByVerticalLine(s1, s2, list):
 
         next = None
         if((floatLarger(y, minY) and floatLarger(maxY, y))                  # 交点在s1s2中
-        # or (c2.y == y and x == s2.x)                # 线段交点在双方末端（在首端无视）
-        # or (c1.y == y and x == s1.x)
             or (floatEqual(c2.x, x) and floatEqual(y, s1.y))                # 交点在端点的时候，一条线段的首和另一条的尾才能有交点，上述注释做法在某种情况失效
             or (floatEqual(c1.x, x) and floatEqual(y, s2.y))
             or (floatEqual(y, minY) and (not floatEqual(c1.x, x)) and (not floatEqual(c2.x, x)))  # 交点在s1s2一端
@@ -293,12 +289,10 @@ def CutByVerticalLine(s1, s2, list):
             if floatLarger(s2.y, s1.y):
                 inters.crossDi = 0 if inters.crossDi == 1 else 1
 
-            # print("s1:%s, s2:%s, c1:%s, c2:%s, inter:%s, crossDi:%s" % (("%f, %f" % (s1.x, s1.y)), ("%f, %f" % (s2.x, s2.y)), ("%f, %f" % (c1.x, c1.y)), ("%f, %f" % (c2.x, c2.y)), ("%f, %f" % (inters.x, inters.y)), ("%s" % ("in" if inters.crossDi == 0 else "out"))))
             crossXs.append(inters)
     return crossXs
 # 被不垂直线段切割，返回交点
 def CutByLine(s1, s2, list):
-    # print("s1 = %s, s2 = %s" % (("%f, %f" % (s1.x, s1.y)), ("%f, %f" % (s2.x, s2.y))))
 
     if floatEqual(s1.x, s2.x):
         return CutByVerticalLine(s1, s2, list)
@@ -316,7 +310,6 @@ def CutByLine(s1, s2, list):
         vertex = list[i]
         c1 = shearedList[i % len(list)]
         c2 = shearedList[(i + 1) % len(list)]
-        # print("c1 = %s, c2 = %s" % (("%f, %f" % (c1.x, c1.y - c1.x * slope)), ("%f, %f" % (c2.x, c2.y - c2.x * slope))))
 
         if(floatEqual(c1.y, c2.y) and floatEqual(c1.y, y)):
             continue    # 重合
@@ -331,8 +324,6 @@ def CutByLine(s1, s2, list):
 
         next = None
         if((floatLarger(x, minX) and floatLarger(maxX, x))                  # 交点在s1s2中
-        # or (c2.y == y and x == s2.x)                # 线段交点在双方末端（在首端无视）
-        # or (c1.y == y and x == s1.x)
         or (floatEqual(c2.y, y) and floatEqual(x, s1.x))                # 交点在端点的时候，一条线段的首和另一条的尾才能有交点，上述注释做法在某种情况失效
         or (floatEqual(c1.y, y) and floatEqual(x, s2.x))
         or (floatEqual(x, minX) and (not floatEqual(c1.y, y)) and (not floatEqual(c2.y, y)))  # 交点在s1s2一端
@@ -383,7 +374,6 @@ def CutByLine(s1, s2, list):
             if floatLarger(s2.x, s1.x): # 取反
                 inters.crossDi = 0 if inters.crossDi == 1 else 1
 
-            # print("s1:%s, s2:%s, c1:%s, c2:%s, inter:%s, crossDi:%s" % (("%f, %f" % (s1.x, s1.y)), ("%f, %f" % (s2.x, s2.y)), ("%f, %f" % (c1.x, c1.y - c1.x * slope)), ("%f, %f" % (c2.x, c2.y - c2.x * slope)), ("%f, %f" % (inters.x, inters.y)), ("%s" % ("in" if inters.crossDi == 0 else "out"))))
             crossXs.append(inters)
 
     return crossXs
@@ -438,9 +428,7 @@ def Compose(list):
             oneResult.append(Vertex(inters.x, inters.y))
             inters.used = True
             loopvar = inters.nextS
-            # print("--------------------" + str(inters.x) + "," + str(inters.y))
             while loopvar != None:
-                # print(str(loopvar.x) + "," + str(loopvar.y))
                 oneResult.append(Vertex(loopvar.x, loopvar.y))
                 if isinstance(loopvar, Intersection):
                     curr = loopvar
@@ -479,9 +467,8 @@ def decode(lists):
 def encode(Str):
     myList = []
     list_float = list(map(float, Str.strip().split()))
-    list_int = list(map(int, list_float))
-    X = list_int[0::2]
-    Y = list_int[1::2]
+    X = list_float[0::2]
+    Y = list_float[1::2]
     assert len(X) == len(Y)
     for i in range(len(X)):
         if (not floatEqual(X[i], X[i - 1])) or (not floatEqual(Y[i], Y[i - 1])): # 去掉连续重复的点
@@ -545,9 +532,3 @@ def PolyClipping(S, C, isClosewise = True):
 
     # 按规则连接交点
     return  decode(Compose(listI))
-
-# USAGE
-
-# result = PolyClipping(S, C)
-# for r in result:
-#     print(r)
