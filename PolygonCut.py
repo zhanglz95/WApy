@@ -482,6 +482,7 @@ def transDirect(list):  # 改变时针方向
     return newList
 
 def toClockwise(list):  # 转换为顺时针
+    # 取极值点判断顺逆
     crossPr = []
     maxX = -1
     mark_i = -1
@@ -490,13 +491,16 @@ def toClockwise(list):  # 转换为顺时针
         if list[i].x > maxX:
             maxX = list[i].x
             mark_i = i
-        v1 = Vertex(list[i].x - list[i - 1].x, list[i].y - list[i - 1].y)
-        v2 = Vertex(list[(i + 1) % len(list)].x - list[i].x, list[(i + 1) % len(list)].y - list[i].y)
-        crossPr.append(v1.x * v2.y - v1.y * v2.x)
-    posCount = len([p for p in crossPr if p > 0])
-    negCount = len([p for p in crossPr if p < 0])
-
-    if posCount < negCount or (posCount == negCount and crossPr[mark_i] < 0):   # 正小于负或者最大值是逆
+    v1 = Vertex(list[mark_i].x - list[mark_i - 1].x, list[mark_i].y - list[mark_i - 1].y)
+    v2 = Vertex(list[(mark_i + 1) % len(list)].x - list[mark_i].x, list[(mark_i + 1) % len(list)].y - list[mark_i].y)
+    crossPr = v1.x * v2.y - v2.x * v1.y
+    while floatEqual(crossPr, 0):
+        mark_i += 1
+        v2 = Vertex(list[(mark_i + 1) % len(list)].x - list[mark_i % len(list)].x,
+                    list[(mark_i + 1) % len(list)].y - list[mark_i % len(list)].y)
+        crossPr = v1.x * v2.y - v2.x * v1.y
+    assert not floatEqual(crossPr, 0)
+    if crossPr < 0:
         return transDirect(list)
     else:
         return list
