@@ -14,7 +14,7 @@ from PolygonCut import *
 
 The two Polygons you input should be like this:
 ```markdown
-#"x y x y ... x y" in clockwise by Default
+#"x y x y ... x y" in clockwise by Default, otherwise transform to clockwise
 S = "161 137 429 376 558 192 619 418 281 431"
 C = "183 391 224 240 610 107 657 361 429 376"
 ```
@@ -22,7 +22,7 @@ C = "183 391 224 240 610 107 657 361 429 376"
 Then get the clipped Polygons:
 ```markdown
 result = PolyClipping(S, C)			# True by default
-#result = PolyClipping(S, C, False) # if S and C are anticlockwise
+#result = PolyClipping(S, C, False) # if you want anticlockwise output
 ```
 
 The format of result should be like this:
