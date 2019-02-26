@@ -482,15 +482,21 @@ def transDirect(list):  # 改变时针方向
     return newList
 
 def toClockwise(list):  # 转换为顺时针
-    # 遍历所有顶点，计算边叉积，正多负少是顺时针
-    posCount = 0
+    crossPr = []
+    maxX = -1
+    mark_i = -1
+
     for i in range(len(list)):
+        if list[i].x > maxX:
+            maxX = list[i].x
+            mark_i = i
         v1 = Vertex(list[i].x - list[i - 1].x, list[i].y - list[i - 1].y)
         v2 = Vertex(list[(i + 1) % len(list)].x - list[i].x, list[(i + 1) % len(list)].y - list[i].y)
-        if v1.x * v2.y - v1.y * v2.x > 0:
-            posCount += 1
-    assert 2 * posCount != len(list)
-    if 2 * posCount < len(list):
+        crossPr.append(v1.x * v2.y - v1.y * v2.x)
+    posCount = len([p for p in crossPr if p > 0])
+    negCount = len([p for p in crossPr if p < 0])
+
+    if posCount < negCount or (posCount == negCount and crossPr[mark_i] < 0):   # 正小于负或者最大值是逆
         return transDirect(list)
     else:
         return list
