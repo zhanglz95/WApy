@@ -7,9 +7,9 @@ This rep is python implementation of Weiler-Atherton clipping algorithm.
 
 
 ## How to use?
-Just copy the python file into your project and "import" it:
+Just copy the python file into the path of your project and import:
 ```markdown
-import PolygonCut
+from PolygonCut import *
 ```
 
 The two Polygons you input should be like this:
@@ -21,7 +21,7 @@ C = "183 391 224 240 610 107 657 361 429 376"
 
 Then get the clipped Polygons:
 ```markdown
-result = PolyClipping(S, C)
+result = PolyClipping(S, C)			# True by default
 #result = PolyClipping(S, C, False) # if S and C are anticlockwise
 ```
 

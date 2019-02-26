@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66cd1d39-96dd-481c-ade0-02a06fe8441c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/PolygonCut.py" beforeDir="false" afterPath="$PROJECT_DIR$/PolygonCut.py" afterDir="false" />
-    </list>
+    <list default="true" id="66cd1d39-96dd-481c-ade0-02a06fe8441c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PolygonCut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="533" column="34" lean-forward="true" selection-start-line="533" selection-start-column="34" selection-end-line="533" selection-end-column="34" />
+            <state relative-caret-position="511">
+              <caret line="520" lean-forward="true" selection-start-line="520" selection-end-line="520" />
               <folding>
                 <element signature="e#14958#15961#0" />
               </folding>
@@ -141,12 +139,12 @@
       <workItem from="1551088404556" duration="32000" />
       <workItem from="1551089311883" duration="19000" />
       <workItem from="1551090833148" duration="599000" />
-      <workItem from="1551091482271" duration="7167000" />
+      <workItem from="1551091482271" duration="7256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68773000" />
+    <option name="totallyTimeSpent" value="68862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -157,7 +155,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3979885" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -182,8 +180,8 @@
     <entry file="file://$PROJECT_DIR$/DataStruct.py" />
     <entry file="file://$PROJECT_DIR$/PolygonCut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="533" column="34" lean-forward="true" selection-start-line="533" selection-start-column="34" selection-end-line="533" selection-end-column="34" />
+        <state relative-caret-position="511">
+          <caret line="520" lean-forward="true" selection-start-line="520" selection-end-line="520" />
           <folding>
             <element signature="e#14958#15961#0" />
           </folding>
