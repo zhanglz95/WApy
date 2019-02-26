@@ -1,7 +1,7 @@
 # 测试数据(数据默认拟时针方向)
 # ----------------------------------------------------------------------------------------------------------------
-# S = "161 137 429 376 558 192 619 418 281 431"
-# C = "183 391 224 240 610 107 657 361 429 376"
+S = "161 137 429 376 558 192 619 418 281 431"
+C = "183 391 224 240 610 107 657 361 429 376"
 
 # resut
 # ####################
@@ -475,10 +475,32 @@ def encode(Str):
             myList.append(Vertex(X[i], Y[i]))
     return myList
 
-def PolyClipping(S, C, isClosewise = True):
+def transDirect(list):  # 改变时针方向
+    newList = []
+    for i in range(len(list)):
+        newList.append(list[len(list) - 1 - i])
+    return newList
+
+def toClockwise(list):  # 转换为顺时针
+    # 遍历所有顶点，计算边叉积，正多负少是顺时针
+    posCount = 0
+    for i in range(len(list)):
+        v1 = Vertex(list[i].x - list[i - 1].x, list[i].y - list[i - 1].y)
+        v2 = Vertex(list[(i + 1) % len(list)].x - list[i].x, list[(i + 1) % len(list)].y - list[i].y)
+        if v1.x * v2.y - v1.y * v2.x > 0:
+            posCount += 1
+    assert 2 * posCount != len(list)
+    if 2 * posCount < len(list):
+        return transDirect(list)
+    else:
+        return list
+
+def PolyClipping(S, C, output_clockwise = True):
     # 对输入字符串进行解码
     listS = encode(S)  # 存放S顶点
     listC = encode(C)  # 存放C顶点
+    listS = toClockwise(listS)
+    listC = toClockwise(listC)
     listI = []  # 存放所有交点
 
     # 链接链表
@@ -522,13 +544,21 @@ def PolyClipping(S, C, isClosewise = True):
     if len(listI) == 0: # 没有交点
         return decode([processNoCross(listS, listC)])
 
-    # 逆时针转换进出性
-    if not isClosewise:
-        for inter in listI:
-            inter.crossDi = 0 if inter.crossDi == 1 else 1
     # 输出测试
     # printList(listS[0], True)
     # printList(listC[0], False)
 
     # 按规则连接交点
-    return  decode(Compose(listI))
+    results = Compose(listI)
+    if not output_clockwise:
+        results_ = []
+        for result in results:
+            result = transDirect(result)
+            results_.append(result)
+        results = results_
+    return  decode(results)
+
+# USAGE
+result = PolyClipping(S, C, True)
+for r in result:
+    print(r)
