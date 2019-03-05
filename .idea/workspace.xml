@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="66cd1d39-96dd-481c-ade0-02a06fe8441c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PolygonCut.py" beforeDir="false" afterPath="$PROJECT_DIR$/PolygonCut.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="11" />
     <option name="y" value="93" />
     <option name="width" value="1400" />
@@ -79,7 +78,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Datasets/提取房屋点测试" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../maskrcnn-benchmark" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -142,16 +141,15 @@
       <workItem from="1551091482271" duration="7256000" />
       <workItem from="1551155949061" duration="922000" />
       <workItem from="1551158712510" duration="15000" />
-      <workItem from="1551168449154" duration="2173000" />
+      <workItem from="1551168449154" duration="2782000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71972000" />
+    <option name="totallyTimeSpent" value="72581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="93" width="1400" height="1000" extended-state="0" />
-    <editor active="true" />
+    <frame x="11" y="93" width="1400" height="1000" extended-state="1" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37985075" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
